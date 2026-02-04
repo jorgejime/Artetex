@@ -8,6 +8,8 @@ import { Process } from './components/Process';
 import { Heritage } from './components/Heritage';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { Privacy } from './components/Privacy';
+import { Legal } from './components/Legal';
 import { View } from './types';
 
 const App: React.FC = () => {
@@ -21,13 +23,15 @@ const App: React.FC = () => {
   }, [currentView]);
 
   const renderView = () => {
-    switch(currentView) {
+    switch (currentView) {
       case 'home': return <Hero onNavigate={setCurrentView} />;
       case 'services': return <Services />;
       case 'collection': return <Gallery />;
       case 'process': return <Process />;
       case 'about': return <Heritage />;
       case 'contact': return <ContactSection />;
+      case 'privacy': return <Privacy />;
+      case 'legal': return <Legal />;
       default: return <Hero onNavigate={setCurrentView} />;
     }
   }
@@ -35,16 +39,17 @@ const App: React.FC = () => {
   return (
     <div className="flex h-screen w-full flex-col md:flex-row font-display text-text-main selection:bg-primary selection:text-black bg-background-light overflow-hidden">
       <Sidebar currentView={currentView} onNavigate={setCurrentView} />
-      
-      <main 
+
+      <main
         ref={scrollRef}
         className="flex-1 w-full md:ml-[280px] lg:ml-[320px] h-screen overflow-y-auto relative bg-[#f4f4f0]"
       >
         <div key={currentView} className="animate-fade-in min-h-[calc(100vh-200px)]">
           {renderView()}
         </div>
-        
-        <Footer />
+
+        {/* Footer moved outside the scrollable div to ensure it's always visible at the bottom of the main content area */}
+        <Footer onNavigate={setCurrentView} />
       </main>
     </div>
   );

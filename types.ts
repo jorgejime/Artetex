@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export type View = 'home' | 'services' | 'collection' | 'process' | 'about' | 'contact';
+export type View = 'home' | 'services' | 'collection' | 'process' | 'about' | 'contact' | 'privacy' | 'legal';
 
 export interface GalleryItem {
   id: string;

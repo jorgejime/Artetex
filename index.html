@@ -1,53 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="es" class="light">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ARTETEX — International Textile Studio</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;900&display=swap" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#00E5FF",
-              "background-light": "#FFFFFF",
-              "background-dark": "#000000",
-              "neutral-gray": "#F2F2F2",
-              "text-main": "#000000",
-              "text-muted": "#666666",
-            },
-            fontFamily: {
-              "display": ["Work Sans", "sans-serif"],
-              "body": ["Work Sans", "sans-serif"],
-            },
-            animation: {
-              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-            },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-            }
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARTETEX — Expertos en Sublimación y Estampado Textil en Barranquilla</title>
+  <meta name="description"
+    content="Artetex es el estudio líder en sublimación premium y estampado textil personalizado en Barranquilla. Calidad 4K para marcas de moda y diseñadores." />
+  <meta name="keywords"
+    content="sublimación, estampado textil, moda Barranquilla, impresión en tela, diseño de patrones, Artetex, personalizado" />
+  <meta name="author" content="Artetex" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://artetex.com/" />
+  <meta property="og:title" content="ARTETEX — Expertos en Sublimación y Estampado Textil" />
+  <meta property="og:description"
+    content="Llevamos tus diseños del papel a la tela con fidelidad absoluta. Sublimación de alta gama en Barranquilla." />
+  <meta property="og:image" content="https://i.ibb.co/JjCpcZVb/28151803-348529935555579-5806917821392748544-n.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://artetex.com/" />
+  <meta property="twitter:title" content="ARTETEX — Expertos en Sublimación y Estampado Textil" />
+  <meta property="twitter:description"
+    content="Llevamos tus diseños del papel a la tela con fidelidad absoluta. Sublimación de alta gama en Barranquilla." />
+  <meta property="twitter:image"
+    content="https://i.ibb.co/JjCpcZVb/28151803-348529935555579-5806917821392748544-n.jpg" />
+
+  <link rel="canonical" href="https://artetex.com/" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;900&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00E5FF",
+            "background-light": "#FFFFFF",
+            "background-dark": "#000000",
+            "neutral-gray": "#F2F2F2",
+            "text-main": "#000000",
+            "text-muted": "#666666",
           },
+          fontFamily: {
+            "display": ["Work Sans", "sans-serif"],
+            "body": ["Work Sans", "sans-serif"],
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          }
         },
-      }
-    </script>
-    <style>
-      ::-webkit-scrollbar { width: 4px; }
-      ::-webkit-scrollbar-track { background: #FFFFFF; }
-      ::-webkit-scrollbar-thumb { background: #000000; }
-      body {
-        background-color: #FFFFFF;
-        -webkit-font-smoothing: antialiased;
-      }
-      /* Swiss Style often uses no borders or very thin ones */
-      .swiss-border { border-top: 1px solid #000000; }
-    </style>
+      },
+    }
+  </script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #FFFFFF;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #000000;
+    }
+
+    body {
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Swiss Style often uses no borders or very thin ones */
+    .swiss-border {
+      border-top: 1px solid #000000;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -60,7 +96,10 @@
 }
 </script>
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

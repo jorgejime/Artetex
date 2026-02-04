@@ -53,7 +53,7 @@ export const AILab: React.FC = () => {
           break;
         }
       }
-    } catch (err) { setError('ERROR_IMAGEN_S01'); } finally { setIsEditing(false); }
+    } catch (err) { setError('ERROR IMAGEN S01'); } finally { setIsEditing(false); }
   };
 
   const generateVideo = async () => {
@@ -79,7 +79,7 @@ export const AILab: React.FC = () => {
       }
       const res = await fetch(`${operation.response?.generatedVideos?.[0]?.video?.uri}&key=${process.env.API_KEY}`);
       setResultVideo(URL.createObjectURL(await res.blob()));
-    } catch (err) { setError('ERROR_VIDEO_VEO'); } finally { setIsAnimating(false); }
+    } catch (err) { setError('ERROR VIDEO VEO'); } finally { setIsAnimating(false); }
   };
 
   return (
@@ -87,7 +87,7 @@ export const AILab: React.FC = () => {
       <div className="max-w-screen-2xl mx-auto flex flex-col gap-24 pb-32">
         <header className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4">
-             <span className="text-black text-sm font-900 uppercase tracking-[0.4em]">SECCIÓN 05</span>
+            <span className="text-black text-sm font-900 uppercase tracking-[0.4em]">ESTUDIO</span>
           </div>
           <div className="lg:col-span-8 flex flex-col gap-8">
             <h2 className="text-black text-6xl md:text-8xl font-900 tracking-tighter leading-none uppercase">ESTUDIO AI</h2>
@@ -98,7 +98,7 @@ export const AILab: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 border border-black overflow-hidden">
           {/* Controles: Columna Izquierda */}
           <div className="lg:col-span-5 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-black flex flex-col gap-12 bg-white">
-            <div 
+            <div
               onClick={() => fileInputRef.current?.click()}
               className="aspect-square border border-black flex flex-col items-center justify-center cursor-pointer hover:bg-neutral-gray transition-colors relative group overflow-hidden"
             >
@@ -108,7 +108,7 @@ export const AILab: React.FC = () => {
               ) : (
                 <div className="text-center p-6">
                   <Upload className="w-12 h-12 mx-auto mb-4" />
-                  <p className="text-[10px] font-900 uppercase tracking-[0.2em]">Carga_Fuente</p>
+                  <p className="text-[10px] font-900 uppercase tracking-[0.2em]">Carga Fuente</p>
                 </div>
               )}
             </div>
@@ -116,7 +116,7 @@ export const AILab: React.FC = () => {
             <div className="flex flex-col gap-8">
               <div className="flex flex-col gap-4">
                 <label className="text-[10px] font-900 uppercase tracking-widest border-b border-black pb-1">Parámetros de entrada</label>
-                <textarea 
+                <textarea
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
                   className="w-full border border-black p-4 text-[12px] font-400 focus:bg-neutral-gray outline-none transition-all uppercase placeholder:text-text-muted/30"
@@ -126,8 +126,8 @@ export const AILab: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                 <button onClick={editImage} disabled={isEditing || isAnimating || !image} className="bg-black text-white py-4 text-[11px] font-900 uppercase tracking-widest hover:bg-primary hover:text-black transition-all disabled:opacity-20">Editar_Patrón</button>
-                 <button onClick={generateVideo} disabled={isEditing || isAnimating || !image} className="border border-black text-black py-4 text-[11px] font-900 uppercase tracking-widest hover:bg-black hover:text-white transition-all disabled:opacity-20">Anim_Secuencia</button>
+                <button onClick={editImage} disabled={isEditing || isAnimating || !image} className="bg-black text-white py-4 text-[11px] font-900 uppercase tracking-widest hover:bg-primary hover:text-black transition-all disabled:opacity-20">Editar Patrón</button>
+                <button onClick={generateVideo} disabled={isEditing || isAnimating || !image} className="border border-black text-black py-4 text-[11px] font-900 uppercase tracking-widest hover:bg-black hover:text-white transition-all disabled:opacity-20">Anim Secuencia</button>
               </div>
             </div>
           </div>
@@ -135,25 +135,25 @@ export const AILab: React.FC = () => {
           {/* Pantalla de Resultados: Columna Derecha */}
           <div className="lg:col-span-7 bg-neutral-gray p-8 md:p-12 flex flex-col items-center justify-center relative min-h-[500px]">
             <div className="w-full h-full border border-black bg-white flex items-center justify-center overflow-hidden relative shadow-inner">
-               {isEditing || isAnimating ? (
-                 <div className="text-center z-10 bg-white/80 backdrop-blur-sm p-10 border border-black">
-                   <Loader2 className="w-12 h-12 animate-spin mx-auto mb-4" />
-                   <p className="text-[11px] font-900 uppercase tracking-[0.3em]">{loadingMsg}</p>
-                 </div>
-               ) : resultImage ? (
-                 <ImageWithFallback src={resultImage} alt="Salida AI" containerClassName="w-full h-full" className="w-full h-full object-cover" />
-               ) : resultVideo ? (
-                 <video src={resultVideo} controls autoPlay loop className="w-full h-full object-cover" />
-               ) : (
-                 <div className="text-center opacity-20 group">
-                    <p className="text-[10px] font-900 uppercase tracking-[0.5em] transition-all group-hover:tracking-[0.8em]">Esperando_Señal_Entrada</p>
-                 </div>
-               )}
+              {isEditing || isAnimating ? (
+                <div className="text-center z-10 bg-white/80 backdrop-blur-sm p-10 border border-black">
+                  <Loader2 className="w-12 h-12 animate-spin mx-auto mb-4" />
+                  <p className="text-[11px] font-900 uppercase tracking-[0.3em]">{loadingMsg}</p>
+                </div>
+              ) : resultImage ? (
+                <ImageWithFallback src={resultImage} alt="Salida AI" containerClassName="w-full h-full" className="w-full h-full object-cover" />
+              ) : resultVideo ? (
+                <video src={resultVideo} controls autoPlay loop className="w-full h-full object-cover" />
+              ) : (
+                <div className="text-center opacity-20 group">
+                  <p className="text-[10px] font-900 uppercase tracking-[0.5em] transition-all group-hover:tracking-[0.8em]">Esperando Señal Entrada</p>
+                </div>
+              )}
             </div>
             {error && (
               <div className="absolute bottom-4 left-4 right-4 bg-red-600 text-white p-4 text-[11px] font-900 flex items-center gap-3 uppercase tracking-tighter border border-black shadow-xl z-20 animate-fade-in">
-                <AlertCircle className="w-5 h-5 flex-shrink-0"/> 
-                <span>Error_Sistema: {error}</span>
+                <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                <span>Error Sistema: {error}</span>
               </div>
             )}
           </div>
